@@ -1,0 +1,37 @@
+
+<%# flash[:error] = "Testing testing" %>
+
+<% if flash[:success] %>
+  <div class="alert alert-success">
+  <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+  	<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+  	<%= flash[:success] %>
+  </div>
+<% elsif flash[:info] %>
+  <div class="alert alert-info">
+  	<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>	
+  	<%= flash[:info] %>
+  </div>
+<% elsif flash[:warning] %>
+  <div class="alert alert-warning">
+  	<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>	
+  	<%= flash[:warning] %>
+  </div>
+<% elsif flash[:danger] %>
+  <div class="alert alert-danger">
+  	<button type="button" class="close" data-dismiss="alert">&times;</button>
+  	<%= flash[:danger] %>
+  </div>
+<% elsif flash[:notice] %>
+  <div class="alert alert-success">
+  	<button type="button" class="close" data-dismiss="alert">&times;</button>
+  	<%= flash[:notice] %>
+  </div>    
+<% elsif flash[:error] %>
+  <div class="alert alert-danger">
+  	<button type="button" class="close" data-dismiss="alert">&times;</button>
+  	<%= flash[:error] %>
+  </div> 
+<% end %>
+
+
