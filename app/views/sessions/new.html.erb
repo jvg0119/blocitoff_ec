@@ -1,0 +1,14 @@
+
+<h1>Sign In</h1>
+
+<%= form_tag session_path do %> <!-- this is where it's going to sessions#create forms are normally post-->
+
+	<%= label_tag :email %>
+	<%= email_field_tag :email %>
+
+	<%= label_tag :password %>
+	<%= password_field_tag :password %>
+
+	<%= submit_tag "Sign In" %>
+
+<% end %>
