@@ -5,6 +5,7 @@ describe "Viewing the list of users" do
 		user = create(:user)
 		user2 = create(:user, name: "Mike")
 
+		sign_in(user)
 		visit users_path
 
 		expect(current_path).to eq(users_path) 

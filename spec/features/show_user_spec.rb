@@ -3,6 +3,8 @@ require 'rails_helper'
 feature "Viewing a user's individual profile" do 
 	scenario "show the user's details" do 
 		user = create(:user)
+
+		sign_in(user)
 	
 		visit user_path(user)	
 	

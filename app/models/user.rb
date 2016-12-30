@@ -5,4 +5,11 @@ class User < ApplicationRecord
   validates :email, presence: true,
   			format: { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ },
       		uniqueness: { case_sensitive: false }
+
+
+  def self.authenticated(email, password)
+  	user = User.find_by(email: email)
+  	user && user.authenticate(password) 
+  end
+
 end

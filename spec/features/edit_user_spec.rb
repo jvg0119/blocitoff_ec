@@ -3,6 +3,8 @@ require 'rails_helper'
 feature "Editing a user" do
 	scenario "updates the user and show it's updated details" do 
 		user = create(:user, name: "John")
+
+		sign_in(user)
 		
 		visit user_path(user)
 		
@@ -24,6 +26,8 @@ feature "Editing a user" do
 		user = create(:user, name: "George")
 	
 		visit user_path(user)
+
+		sign_in(user)
 	
 		click_link("Edit")
 	

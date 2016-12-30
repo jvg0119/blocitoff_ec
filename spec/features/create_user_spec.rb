@@ -19,9 +19,10 @@ feature "Creating a new user" do
 		expect(page).to have_content("My new name")
 		expect(page).to have_content('new@example.com')
 
+		#debugger
 		expect(page).to have_link(User.last.name) # testing signing in after creating an account
 		expect(page).to have_link("Sign Out")
-		#save_and_open_page
+		# save_and_open_page
 	end
 	scenario "with invalid attributes does not save the user and re-renders back to the new form" do 
 		visit root_url

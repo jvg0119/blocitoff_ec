@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+
+  before_action :require_signin, except: [:new, :create]
+  before_action :require_correct_user, only: [:edit, :update, :destroy]
+
   def index
   	@users = User.all
   end
@@ -43,6 +47,7 @@ class UsersController < ApplicationController
   def destroy 
   	@user = User.find(params[:id])
   	@user.destroy
+  	session[:user_id] = nil
   	flash[:notice] = "Your user account was deleted!"
   	redirect_to root_url
   end
@@ -53,4 +58,15 @@ private
   	params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
+  def require_correct_user
+  	@user = User.find(params[:id])
+  	unless current_user == @user 
+  		redirect_to root_url
+  	end
+  end
+
 end
+
+
+
+
