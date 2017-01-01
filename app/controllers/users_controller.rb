@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
 
   before_action :require_signin, except: [:new, :create]
-  before_action :require_correct_user, only: [:edit, :update, :destroy]
+  before_action :require_correct_user, only: [:show, :edit, :update, :destroy]
 
-  def index
-  	@users = User.all
-  end
+  # def index
+  # 	@users = User.all
+  # end
 
   def show
   	@user = User.find(params[:id])
+    @todos = @user.todos
   end
 
   def new
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
   	else
   		flash[:error] = "There was an error creating your user account. Please try again."
   		render :new 
+      # redirect_to root_url
   		#byebug
   	end
   end
@@ -61,6 +63,7 @@ private
   def require_correct_user
   	@user = User.find(params[:id])
   	unless current_user == @user 
+      flash[:alert] = "Access not authorized!"
   		redirect_to root_url
   	end
   end

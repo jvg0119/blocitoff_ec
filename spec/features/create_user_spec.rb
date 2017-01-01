@@ -47,7 +47,7 @@ feature "Creating a new user" do
 
 		expect { click_button("Create User") }.to_not change{ User.count }
 		expect(page).to have_content("There was an error creating your user account. Please try again.")
-		# save_and_open_page
+	#	 save_and_open_page
 	end
 
 end

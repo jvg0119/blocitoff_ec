@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :todo do
-    description "MyString"
-    user nil
+    description "My first todo"
+    user
   end
 end

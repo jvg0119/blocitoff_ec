@@ -3,9 +3,12 @@ Rails.application.routes.draw do
 
   resource :session 
   
-  resources :todos, only: [:new, :create, :show, :index]
+  # resources :todos, only: [:new, :create, :show, :index, :destroy]
 
-  resources :users
+  resources :users do 
+  	resources :todos, only: [:new, :create, :show, :index, :destroy]
+  end
+
 
   get 'index' => 'welcome#index'
   get 'about' => 'welcome#about'

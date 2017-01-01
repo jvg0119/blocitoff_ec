@@ -1,0 +1,17 @@
+
+<%#= todo.description %>
+<%#= todo.days_left %>
+<%#= link_to "", [user, todo], method: :delete, class: 'glyphicon glyphicon-ok', id: 'glyphicon-ok-#{todo.id}' %>
+
+<%#= link_to "", user_todo_path([user, todo]), method: :delete, class: 'glyphicon glyphicon-ok', id: 'glyphicon-ok-#{todo.id}' %>
+
+
+
+
+<tbody>
+  <tr>
+    <td><%= todo.description %></td>
+    <td><%= todo.days_left %></td>
+    <td><%= link_to "", [user, todo], method: :delete, class: 'glyphicon glyphicon-ok', id: 'glyphicon-ok-#{todo.id}' %></td>
+  </tr>
+</tbody>
