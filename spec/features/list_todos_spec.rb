@@ -21,14 +21,6 @@ feature "Viewing the TODO list" do
 		expect(page).to have_link('glyphicon-ok-#{todo.id}') #(id-of-link)
 	#	save_and_open_page 
 	end
-	scenario "shows the days left up to 7 days after the date of creation" do
-
-
-	end
 
 end
-
-
- 
- ## need to create spec for verify days_left; put this in list_todos_spec
 

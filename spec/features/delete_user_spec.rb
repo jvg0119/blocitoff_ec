@@ -15,4 +15,5 @@ feature "Deleting a user" do
 		expect(page).to have_no_link(user.name)
 		# save_and_open_page
 	end
+
 end

@@ -13,7 +13,7 @@
 <div class="container">
   <h2><%= @user.name %>'s Todos</h2>
   <p>This todo list will expire after 7 days:</p>            
-  <table class="table table-hover">
+  <table class="table table-hovern js-todos">
     <thead>
       <tr>
         <th>Descriptions</th>
@@ -21,13 +21,17 @@
         <th>Complete</th>
       </tr>
     </thead>
-		<%= render partial: 'todos/todo', collection: @todos, locals: { user: @user, todo: @todo } %>
+  
+      <%= render partial: 'todos/todo', collection: @todos, locals: { user: @user, todo: @todo} %>   
+      <!-- fr user show controller --> 
+  
   </table>
 </div>
 
 
-<div>
-	<%= render partial: 'todos/form', locals: { user: @user, todo: @todos.new } %>
+<div class="new-todo">
+	<%#= render partial: 'todos/form', locals: { user: @user, todo: @todos.new } %>
+  <%= render partial: 'todos/form', locals: { user: @user, todo: @todo } %>
 </div>
 
 

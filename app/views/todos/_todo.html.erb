@@ -7,11 +7,24 @@
 
 
 
-
-<tbody>
+<!-- fr user show or create.js -->
+<tbody id="todo-<%= todo.id %>"> 
   <tr>
     <td><%= todo.description %></td>
     <td><%= todo.days_left %></td>
-    <td><%= link_to "", [user, todo], method: :delete, class: 'glyphicon glyphicon-ok', id: 'glyphicon-ok-#{todo.id}' %></td>
+    <td><%= link_to "", [user, todo], method: :delete, class: 'glyphicon glyphicon-ok', id: 'glyphicon-ok-#{todo.id}', remote: true %></td>
   </tr>
 </tbody>
+
+
+<!-- OK to use
+<%#= content_tag(:tbody, id:"todo-#{todo.id}") do %> 
+
+  <tr>
+    <td><%#= todo.description %></td>
+    <td><%#= todo.days_left %></td>
+    <td><%#= link_to "", [@user, todo], method: :delete, class: 'glyphicon glyphicon-ok', id: 'glyphicon-ok-#{todo.id}', remote: true %></td>
+  </tr>
+
+<%# end %>
+ -->

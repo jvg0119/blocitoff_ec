@@ -8,12 +8,17 @@ class UsersController < ApplicationController
   # end
 
   def show
-  	@user = User.find(params[:id])
+  #	@user = User.find(params[:id]) # coming fr require_correct_user
     @todos = @user.todos
   end
 
   def new
+    if !current_user
   	@user = User.new
+  else
+    flash[:alert] = "Please sign out first."
+    redirect_to root_url
+  end
   end
 
   def create
@@ -47,7 +52,7 @@ class UsersController < ApplicationController
   end
 
   def destroy 
-  	@user = User.find(params[:id])
+  	# @user = User.find(params[:id])
   	@user.destroy
   	session[:user_id] = nil
   	flash[:notice] = "Your user account was deleted!"

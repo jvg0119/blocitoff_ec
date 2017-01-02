@@ -1,0 +1,11 @@
+<% if @todo.valid? %>
+
+	$('.js-todos').append("<%= escape_javascript(render partial: 'todos/todo', locals: { user: @user, todo: @todo } )%>");
+
+	$('.new-todo').html("<%= escape_javascript(render partial: 'todos/form', locals: { user: @user, todo: @new_todo }) %>");
+
+<% else %>
+
+	$('.new-todo').html("<%= escape_javascript(render partial: 'todos/form', locals: { user: @user, todo: @todo }) %>");
+
+<% end %>

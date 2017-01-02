@@ -1,0 +1,11 @@
+
+<% if @todo.destroyed? %>
+
+	//$("#todo-<%#= @todo.id %>").hide()
+	$('#todo-' + <%= @todo.id %>).fadeOut(500);
+
+<% else %>
+
+	$('#todo-' +<%= @todo.id %>).append("<div class='alert alert-danger'><%= flash[:error] %></div>");
+
+<% end %>
