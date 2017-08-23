@@ -1,27 +1,14 @@
 class TodosController < ApplicationController
 
-#  before_action :
 
-  # def index
-  # end
-
-  def show
-    @user = User.find(params[:user_id])
-    @todos = @user.todos 
-  	#byebug
-  end
-
-  # def new
-  # 	@todo = Todo.new
-  # end
 
   def create
     #byebug
     @user = User.find(params[:user_id])
-    #@todos = @user.todos 
+    #@todos = @user.todos
     @todo = @user.todos.new(todo_params)
     @new_todo = Todo.new
-   	#@todo = Todo.new(todo_params)
+   #	@todo = Todo.new(todo_params)
   #	byebug
   	if @todo.save
   	  flash[:notice] = "Your new TODO was saved successfully!"
@@ -42,7 +29,7 @@ class TodosController < ApplicationController
     #@user = current_user
     @user = User.find(params[:user_id])
     #byebug
-    @todo = @user.todos.find(params[:id]) 
+    @todo = @user.todos.find(params[:id])
     if @todo.destroy
       # redirect_to user_path(@user)
       flash[:notice] = "Your TODO is deleted."
@@ -63,4 +50,3 @@ private
   end
 
 end
-

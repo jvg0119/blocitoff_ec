@@ -27,10 +27,10 @@ class UsersController < ApplicationController
   		#byebug
   		session[:user_id] = @user.id
   		flash[:notice] = "Your user account was created successfully!"
-  		redirect_to @user 
+  		redirect_to @user
   	else
   		flash[:error] = "There was an error creating your user account. Please try again."
-  		render :new 
+  		render :new
       # redirect_to root_url
   		#byebug
   	end
@@ -44,14 +44,14 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
 		if @user.update_attributes(user_params)
 			flash[:notice] = "Your user account was updated successfully!"
-			redirect_to @user 
+			redirect_to @user
 		else
 			flash[:error] = "There was an error updating your user account. Please try again."
 			render :edit
 		end
   end
 
-  def destroy 
+  def destroy
   	# @user = User.find(params[:id])
   	@user.destroy
   	session[:user_id] = nil
@@ -67,14 +67,10 @@ private
 
   def require_correct_user
   	@user = User.find(params[:id])
-  	unless current_user == @user 
+  	unless current_user == @user
       flash[:alert] = "Access not authorized!"
   		redirect_to root_url
   	end
   end
 
 end
-
-
-
-

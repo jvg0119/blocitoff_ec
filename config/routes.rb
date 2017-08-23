@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
 
-  resource :session 
-  
-  # resources :todos, only: [:new, :create, :show, :index, :destroy]
+  resource :session
 
-  resources :users do 
-  	resources :todos, only: [:new, :create, :show, :index, :destroy]
+  resources :users do
+    resources :todos, only: [:new, :create, :destroy]
   end
 
 
@@ -17,4 +15,3 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
