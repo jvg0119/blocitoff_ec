@@ -1,6 +1,6 @@
 # README
 
-### SimplifyTodo
+### SimplifyTodo-ii
 
   * To use this simple todo app you need to be signed in and confirmed.
   * You can create as many todo items as you want.
@@ -17,8 +17,8 @@
 
 ### to automate the deletion of the todo items run whenever:
   * to start whenever
-    * whenver -w
+    * whenever -w
   * to stop whenvere
-    * whenver -c theCronJob
+    * whenever -c theCronJob
     * crontab -r    
-    * whenver clear  
+    * whenever clear  
