@@ -14,4 +14,6 @@ namespace :todo do
 	# 	 		# Todo.where('created_at <= ?', Time.now - 5.minutes ) # same as above
 	# end
 
+	# go to schdule.rb    to run whenever to automate this task 
+
 end

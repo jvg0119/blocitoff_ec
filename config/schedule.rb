@@ -32,3 +32,16 @@ end
 # every 7.minutes do
 #   rake "todo:delete_todos"
 # end
+
+
+# to run whenever
+# whenever -w       # type
+# [write] crontab file written    # response
+# check to see if it is working; use shorter time frame for testing
+
+# to stop whenever
+# use :
+# whenever -c theCronJob    # if this does not work  try
+# crontab -r    # this worked
+
+# You can also try the command    whenever clear
