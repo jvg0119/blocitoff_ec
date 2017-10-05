@@ -15,7 +15,7 @@
   * Authentication from scratch using gem 'bcrypt'
   * Automatically delete todo items more than 7 days.
 
-### to automate the deletion of the todo items run whenever:
+### To automate the deletion of the todo items run whenever:
   * to start whenever
     * whenever -w
   * to stop whenvere
